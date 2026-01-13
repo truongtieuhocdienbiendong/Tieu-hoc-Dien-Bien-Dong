@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cổng thông tin – Trường Tiểu học Điện Biên Đông</title>
+  <style>
+    * { box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
+    body { margin:0; background:#eef2f6; color:#222; }
+
+    /* HEADER */
+    header { background: linear-gradient(90deg,#0b5ed7,#0d6efd); color:#fff; padding:14px 16px; }
+    header .header-top { max-width:1200px; margin:auto; display:flex; align-items:center; gap:18px; }
+    header img { height:70px; }
+    header h1 { margin:0; font-size:22px; text-transform:uppercase; }
+    header p { margin:4px 0 0; font-size:14px; }
+
+    /* NAV */
+    nav { background:#fff; border-bottom:2px solid #0b5ed7; }
+    nav ul { max-width:1200px; margin:auto; list-style:none; padding:0 16px; display:flex; flex-wrap:wrap; gap:28px; }
+    nav li { padding:14px 0; }
+    nav a { text-decoration:none; font-weight:600; color:#0b5ed7; }
+    nav a:hover { text-decoration:underline; }
+
+    /* BANNER */
+    .banner { position: relative; max-height:810px; overflow:hidden; } /* tăng 1,5 lần so với 540px */
+    .banner img { width:100%; max-height:810px; object-fit:cover; display:block; }
+    .dots { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); display:flex; gap:6px; }
+    .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.6); cursor:pointer; }
+    .dot.active { background:white; }
+
+    /* LAYOUT */
+    .container { max-width:1200px; margin:20px auto; padding:0 16px; display:grid; grid-template-columns:3fr 1.2fr; gap:20px; }
+
+    /* CARDS */
+    .card { background:#fff; border-radius:10px; padding:18px; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
+    .card h2 { margin-top:0; font-size:18px; color:#0b5ed7; border-bottom:2px solid #e5e5e5; padding-bottom:6px; }
+
+    /* NEWS */
+    .news-item { padding:12px 0; border-bottom:1px dashed #ddd; }
+    .news-item:last-child { border-bottom:none; }
+    .news-item h3 { margin:0 0 6px; font-size:16px; cursor:pointer; }
+    .news-item p { margin:0; font-size:14px; color:#555; display:none; }
+    .news-item small { color:#888; display:block; margin-bottom:6px; }
+
+    /* SIDEBAR */
+    .sidebar p, .sidebar div { margin:8px 0; font-size:14px; }
+    .sidebar a { color:#0b5ed7; text-decoration:none; cursor:pointer; }
+    .sidebar a:hover { text-decoration:underline; }
+
+    .sub-item { margin-left:12px; display:none; }
+    .sub-item p { margin:4px 0; }
+
+    /* FOOTER */
+    footer { background:#0b5ed7; color:#fff; text-align:center; padding:12px; margin-top:30px; font-size:14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <img src="logo-truong.png" alt="Logo trường" />
+    <div>
+      <h1>Trường Tiểu học Điện Biên Đông</h1>
+      <p>Cổng thông tin điện tử – Xã Na Son, tỉnh Điện Biên</p>
+    </div>
+  </div>
+</header>
+
+<!-- BANNER SLIDER -->
+<div class="banner">
+  <img id="bannerImg" src="banner1.jpg" alt="Banner Trường Tiểu học Điện Biên Đông" />
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+  const banners = ["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"];
+  let index = 0;
+  const img = document.getElementById("bannerImg");
+  const dotsContainer = document.getElementById("dots");
+
+  banners.forEach((_,i)=>{
+    const dot = document.createElement("span");
+    dot.className = i===0?"dot active":"dot";
+    dot.onclick = ()=>{ showBanner(i); };
+    dotsContainer.appendChild(dot);
+  });
+
+  function showBanner(i){
+    index=i;
+    img.src=banners[index];
+    document.querySelectorAll(".dot").forEach((d,idx)=>{
+      d.classList.toggle("active", idx===index);
+    });
+  }
+
+  setInterval(()=>{
+    index=(index+1)%banners.length;
+    showBanner(index);
+  },4000);
+</script>
+
+<nav>
+  <ul>
+    <li><a href="#">Trang chủ</a></li>
+    <li><a href="#gioi-thieu">Giới thiệu</a></li>
+    <li><a href="#tin-tuc">Tin tức – Sự kiện</a></li>
+    <li><a href="#">Văn bản công khai</a></li>
+    <li><a href="#tuyen-sinh">Tuyển sinh</a></li>
+    <li><a href="login.html">Đăng nhập</a></li>
+  </ul>
+</nav>
+
+<section id="gioi-thieu" class="container">
+  <div class="card">
+    <h2>Giới thiệu nhà trường</h2>
+    <p><strong>Tên trường:</strong> Trường Tiểu học Điện Biên Đông</p>
+    <p><strong>Địa chỉ:</strong> Tổ 4, Xã Na Son, tỉnh Điện Biên</p>
+    <p><strong>Loại hình:</strong> Trường Tiểu học công lập</p>
+    <p><strong>Hiệu trưởng:</strong> Nguyễn Thị Minh Khánh – SĐT: 0943163797</p>
+    <p><strong>Email:</strong> truongtieuhocdienbiendong@gmail.com</p>
+    <p><strong>Lịch sử hình thành:</strong> Trường Tiểu học Điện Biên Đông được thành lập năm 2008 trên cơ sở tiền thân là trường Tiểu học Huyện Lỵ theo Quyết định số 2222/QĐ-UBND ngày 22/8/2008, đặt tại Tổ dân cư số 4, Thị Trấn, huyện Điện Biên Đông, tỉnh Điện Biên, lấy tên là trường tiểu học Thị Trấn Điện Biên Đông. Đến tháng 9 năm 2025, trường tiểu học Thị Trấn Điện Biên Đông đổi tên thành trường Tiểu học Điện Biên Đông theo Quyết định số 852/QĐ-UBND ngày 22 tháng 9 năm 2025 của UBND xã Na Son.</p>
+    <p><strong>Sứ mệnh:</strong> Môi trường học tập an toàn, thân thiện, kỷ cương, chất lượng; phát triển toàn diện đạo đức, trí tuệ, thể chất, kỹ năng sống và năng lực cá nhân.</p>
+    <p><strong>Tầm nhìn:</strong> Cơ sở giáo dục tiêu biểu, đội ngũ giáo viên tâm huyết, học sinh chăm ngoan, sáng tạo; đáp ứng yêu cầu đổi mới giáo dục.</p>
+    <p><strong>Mục tiêu:</strong> Nâng cao chất lượng giáo dục toàn diện; môi trường học tập an toàn, thân thiện, kỷ cương; quan tâm phát triển phù hợp năng lực HS.</p>
+    <p><strong>Đội ngũ:</strong> Tổng số cán bộ, giáo viên, nhân viên: 26 người</p>
+  </div>
+
+  <div class="card sidebar">
+    <h2>Văn bản công khai</h2>
+    <p>• <a href="vb1.pdf" target="_blank">Công khai năm học 2023-2024</a></p>
+    <p>• <a href="vb2.pdf" target="_blank">Công khai năm học 2024-2025</a></p>
+    <p>• <a href="vb3.pdf" target="_blank">Công khai năm học 2025-2026</a></p>
+  </div>
+</section>
+
+<section id="tin-tuc" class="container">
+  <div class="card">
+    <h2>Tin nổi bật</h2>
+    <div id="news"></div>
+  </div>
+
+  <div class="card sidebar">
+    <h2>Cơ cấu tổ chức</h2>
+    <p>• Ban giám hiệu: 03 Đc</p>
+    <p>• Tổ chuyên môn: 05 Tổ</p>
+    <p>• Văn phòng: 01 tổ</p>
+  </div>
+</section>
+
+<section id="tuyen-sinh" class="container">
+  <div class="card sidebar">
+    <h2>Tuyển sinh</h2>
+    <p><a onclick="toggleSub('ke-hoach')">Kế hoạch tuyển sinh</a></p>
+    <div class="sub-item" id="ke-hoach">
+      <p><a onclick="toggleSub('noi-dung')">Nội dung chi tiết</a></p>
+      <div class="sub-item" id="noi-dung">
+        <pre>
+UỶ BAN NHÂN DÂN XÃ NA SON    CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM
+TRƯỜNG TIỂU HỌC THỊ TRẤN     Độc lập – Tự do – Hạnh phúc
+
+Số: 97/TB-THTT              Na Son, ngày 21 tháng 8 năm 2025
+THÔNG BÁO
+KẾ HOẠCH TỰU TRƯỜNG VÀ KHAI GIẢNG 
+NĂM HỌC 2025-2026
+
+Căn cứ Quyết định số 1812/QĐ-UBND ngày 13 tháng 8 năm 2025 của UBND tỉnh Điện Biên về việc ban hành Kế hoạch thời gian năm học 2025 - 2026, trường Tiểu học Thị Trấn Điện Biên Đông thông báo tới Quý phụ huynh và các em học sinh như sau:
+1. Ngày tựu trường:
+- Đón học sinh lớp 1: 7 giờ 30 phút, thứ Sáu, ngày 29/8/2025.
+- Học sinh lớp 2,3,4,5: 8 giờ 00 phút, thứ Sáu, ngày 29/8/2025.
+- Nội dung: Học sinh nhận lớp; Kiểm tra đồ dùng sách vở; Học nội quy và nền nếp của trường, lớp.
+2. Ngày Khai giảng:
+- Thời gian: 7 giờ 30 phút, thứ Sáu, ngày 05/9/2025.
+- Hình thức: Trực tiếp kết hợp với trực tuyến.
+3. Thời gian học chính thức:
+- Thứ Hai, ngày 08/9/2025 (Học 2 buổi/ngày).
+
+Trên đây là thông báo Kế hoạch tựu trường và khai giảng năm học 2025-2026 của trường Tiểu học Thị Trấn Điện Biên Đông. Kính mong Quý phụ huynh đưa con em đúng thời gian quy định.
+
+HIỆU TRƯỞNG
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Trường Tiểu học Điện Biên Đông – Cổng thông tin điện tử
+</footer>
+
+<script>
+  // Tin nổi bật (click mở/đóng)
+  const defaultNews = [
+    {title:"Chào đón học sinh lớp 1 năm học 2025-2026", date:"05/09/2025", content:"Trường Tiểu học Điện Biên Đông hân hoan tổ chức lễ đón các em học sinh lớp 1 đến ngôi trường mới."},
+    {title:"Lễ Khai giảng năm học mới 2025-2026", date:"05/09/2025", content:"Trường Tiểu học Điện Biên Đông long trọng tổ chức lễ khai giảng năm học mới với sự tham gia của toàn thể cán bộ giáo viên và học sinh."},
+    {title:"Triển khai nhiệm vụ năm học", date:"12/09/2025", content:"Nhà trường tổ chức họp hội đồng sư phạm nhằm triển khai nhiệm vụ năm học theo chỉ đạo của ngành."},
+    {title:"Hoạt động trải nghiệm học sinh", date:"20/09/2025", content:"Các hoạt động trải nghiệm được tổ chức nhằm phát triển năng lực và phẩm chất cho học sinh."},
+    {title:"Lễ mít tinh kỉ niệm ngày Nhà giáo Việt Nam 20/11", date:"20/11/2025", content:"Trường Tiểu học Điện Biên Đông long trọng tổ chức lễ mít tinh kỉ niệm ngày Nhà giáo Việt Nam 20/11 với sự tham gia của toàn thể cán bộ giáo viên và học sinh."}
+  ];
+
+  const newsBox = document.getElementById("news");
+  const newsData = JSON.parse(localStorage.getItem("news")||JSON.stringify(defaultNews));
+
+  newsData.forEach(n=>{
+    const div=document.createElement("div");
+    div.className="news-item";
+
+    const h3=document.createElement("h3");
+    h3.innerText=n.title;
+
+    const small=document.createElement("small");
+    small.innerText=n.date;
+
+    const p=document.createElement("p");
+    p.innerText=n.content;
+
+    h3.onclick=()=>{ p.style.display=p.style.display==="none"?"block":"none"; };
+
+    div.appendChild(h3);
+    div.appendChild(small);
+    div.appendChild(p);
+
+    newsBox.appendChild(div);
+  });
+
+  function toggleSub(id){
+    const el = document.getElementById(id);
+    el.style.display = el.style.display==="none"?"block":"none";
+  }
+</script>
+
+</body>
+</html>
