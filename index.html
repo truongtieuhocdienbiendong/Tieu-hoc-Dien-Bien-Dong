@@ -11,27 +11,27 @@ body{margin:0;background:#eef2f6;color:#222}
 
 /* HEADER */
 header{background:linear-gradient(90deg,#0b5ed7,#0d6efd);color:#fff;padding:14px}
-.header-top{max-width:1200px;margin:auto;display:flex;gap:18px;align-items:center}
+.header-top{max-width:1200px;margin:auto;display:flex;align-items:center;gap:16px}
 header img{height:70px}
 header h1{margin:0;font-size:22px;text-transform:uppercase}
 header p{margin:4px 0 0;font-size:14px}
 
 /* NAV */
 nav{background:#fff;border-bottom:2px solid #0b5ed7}
-nav ul{max-width:1200px;margin:auto;list-style:none;padding:0 16px;display:flex;gap:28px;flex-wrap:wrap}
+nav ul{max-width:1200px;margin:auto;list-style:none;padding:0 16px;display:flex;gap:28px}
 nav li{padding:14px 0}
 nav a{text-decoration:none;font-weight:600;color:#0b5ed7}
 nav a:hover{text-decoration:underline}
 
 /* BANNER */
 .banner{position:relative;max-height:810px;overflow:hidden}
-.banner img{width:100%;max-height:810px;object-fit:cover}
+.banner img{width:100%;height:810px;object-fit:cover;display:block}
 .dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:6px}
 .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer}
 .dot.active{background:#fff}
 
 /* LAYOUT */
-.container{max-width:1200px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:3fr 1.3fr;gap:20px}
+.container{max-width:1200px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:3fr 1.2fr;gap:20px}
 
 /* CARD */
 .card{background:#fff;border-radius:10px;padding:18px;box-shadow:0 4px 10px rgba(0,0,0,.08)}
@@ -40,15 +40,15 @@ nav a:hover{text-decoration:underline}
 /* NEWS */
 .news-item{padding:12px 0;border-bottom:1px dashed #ddd}
 .news-item:last-child{border-bottom:none}
-.news-item h3{margin:0 0 6px;font-size:16px;cursor:pointer}
-.news-item p{margin:0;font-size:14px;color:#555;display:none}
-.news-item small{color:#888;display:block;margin-bottom:6px}
+.news-item h3{margin:0;font-size:16px;cursor:pointer}
+.news-item p{display:none;margin:6px 0 0;font-size:14px;color:#444}
+.news-item small{color:#888}
 
 /* SIDEBAR */
-.sidebar p,.sidebar div{margin:8px 0;font-size:14px}
 .sidebar a{color:#0b5ed7;text-decoration:none;cursor:pointer}
 .sidebar a:hover{text-decoration:underline}
-.sub-item{margin-left:14px;display:none}
+.sub-item{margin-left:16px;display:none}
+.sub-item p{margin:6px 0}
 
 /* FOOTER */
 footer{background:#0b5ed7;color:#fff;text-align:center;padding:12px;margin-top:30px;font-size:14px}
@@ -59,7 +59,7 @@ footer{background:#0b5ed7;color:#fff;text-align:center;padding:12px;margin-top:3
 
 <header>
   <div class="header-top">
-    <img src="logo-truong.png" alt="Logo trường">
+    <img src="logo-truong.png">
     <div>
       <h1>Trường Tiểu học Điện Biên Đông</h1>
       <p>Cổng thông tin điện tử – Xã Na Son, tỉnh Điện Biên</p>
@@ -75,11 +75,11 @@ footer{background:#0b5ed7;color:#fff;text-align:center;padding:12px;margin-top:3
 
 <nav>
 <ul>
-  <li><a href="#">Trang chủ</a></li>
-  <li><a href="#gioi-thieu">Giới thiệu</a></li>
-  <li><a href="#tin-tuc">Tin nổi bật</a></li>
-  <li><a href="#van-ban">Văn bản công khai</a></li>
-  <li><a href="#tuyen-sinh">Tuyển sinh</a></li>
+<li><a href="#">Trang chủ</a></li>
+<li><a href="#gioi-thieu">Giới thiệu</a></li>
+<li><a href="#tin-tuc">Tin tức</a></li>
+<li><a href="#van-ban">Văn bản công khai</a></li>
+<li><a href="#tuyen-sinh">Tuyển sinh</a></li>
 </ul>
 </nav>
 
@@ -87,115 +87,152 @@ footer{background:#0b5ed7;color:#fff;text-align:center;padding:12px;margin-top:3
 <section id="gioi-thieu" class="container">
 <div class="card">
 <h2>Giới thiệu nhà trường</h2>
-<p><strong>Tên trường:</strong> Trường Tiểu học Điện Biên Đông</p>
-<p><strong>Địa chỉ:</strong> Tổ 4, xã Na Son, tỉnh Điện Biên</p>
-<p><strong>Loại hình:</strong> Trường Tiểu học công lập</p>
-<p><strong>Hiệu trưởng:</strong> Nguyễn Thị Minh Khánh – 0943163797</p>
-<p><strong>Email:</strong> truongtieuhocdienbiendong@gmail.com</p>
-<p><strong>Lịch sử hình thành:</strong> Trường được thành lập năm 2008 theo Quyết định số 2222/QĐ-UBND ngày 22/8/2008. Tháng 9/2025 đổi tên thành Trường Tiểu học Điện Biên Đông theo Quyết định số 852/QĐ-UBND.</p>
-<p><strong>Sứ mệnh:</strong> Xây dựng môi trường giáo dục an toàn, thân thiện, chất lượng.</p>
-<p><strong>Tầm nhìn:</strong> Trường tiểu học tiêu biểu của huyện Điện Biên Đông.</p>
-<p><strong>Mục tiêu:</strong> Giáo dục toàn diện, phát triển phẩm chất và năng lực học sinh.</p>
-<p><strong>Đội ngũ:</strong> 26 cán bộ, giáo viên, nhân viên.</p>
+<p><b>Tên trường:</b> Trường Tiểu học Điện Biên Đông</p>
+<p><b>Địa chỉ:</b> Tổ 4, xã Na Son, tỉnh Điện Biên</p>
+<p><b>Loại hình:</b> Trường Tiểu học công lập</p>
+<p><b>Hiệu trưởng:</b> Nguyễn Thị Minh Khánh – 0943163797</p>
+<p><b>Email:</b> truongtieuhocdienbiendong@gmail.com</p>
+
+<p><b>Lịch sử hình thành:</b> Trường Tiểu học Điện Biên Đông được thành lập năm 2008 trên cơ sở tiền thân là Trường Tiểu học Huyện Lỵ theo Quyết định số 2222/QĐ-UBND ngày 22/8/2008. Đến tháng 9/2025, trường đổi tên thành Trường Tiểu học Điện Biên Đông theo Quyết định số 852/QĐ-UBND ngày 22/9/2025 của UBND xã Na Son.</p>
+
+<p><b>Sứ mệnh:</b> Tạo dựng môi trường giáo dục an toàn, thân thiện, kỷ cương và chất lượng.</p>
+<p><b>Tầm nhìn:</b> Trở thành cơ sở giáo dục tiêu biểu của huyện Điện Biên Đông.</p>
+<p><b>Mục tiêu:</b> Nâng cao chất lượng giáo dục toàn diện cho học sinh.</p>
+<p><b>Đội ngũ:</b> 26 cán bộ, giáo viên, nhân viên.</p>
 </div>
 
-<div class="card sidebar" id="van-ban">
+<!-- VĂN BẢN -->
+<div id="van-ban" class="card sidebar">
 <h2>Văn bản công khai</h2>
 
-<p><a onclick="toggleSub('ck2324')">📁 CÔNG KHAI 23-24</a></p>
+<p><a onclick="toggle('ck2324')">📁 CÔNG KHAI 23–24</a></p>
 <div class="sub-item" id="ck2324">
-  <p><a href="public-docs/23-24/" target="_blank">📄 Mở thư mục</a></p>
+  <p><a href="cong-khai-23-24/Biểu mẫu 07.pdf" target="_blank">📄 Biểu mẫu 07</a></p>
+  <p><a href="cong-khai-23-24/Biểu mẫu 05.pdf" target="_blank">📄 Biểu mẫu 05</a></p>
+  <p><a href="cong-khai-23-24/KH CÔNG KHAI.pdf" target="_blank">📄 KH CÔNG KHAI</a></p>
+  <p><a href="cong-khai-23-24/QĐ BAN HÀNH QUY CHẾ.pdf" target="_blank">📄 QĐ BAN HÀNH QUY CHẾ</a></p>
+  <p><a href="cong-khai-23-24/QĐ THÀNH LẬP BAN CHỈ ĐẠO.pdf" target="_blank">📄 QĐ THÀNH LẬP BAN CHỈ ĐẠO</a></p>
+  <p><a href="cong-khai-23-24/BẢNG ĐỐI CHIẾU.pdf" target="_blank">📄 BẢNG ĐỐI CHIẾU</a></p>
+  <p><a href="cong-khai-23-24/TỰ KIỂM TRA.pdf" target="_blank">📄 TỰ KIỂM TRA</a></p>
+  <p><a href="cong-khai-23-24/vb08.pdf" target="_blank">📄 Văn bản 08</a></p>
+  <p><a href="cong-khai-23-24/vb09.pdf" target="_blank">📄 Văn bản 09</a></p>
+  <p><a href="cong-khai-23-24/vb10.pdf" target="_blank">📄 Văn bản 10</a></p>
 </div>
 
-<p><a onclick="toggleSub('ck2425')">📁 CÔNG KHAI 24-25</a></p>
+<p><a onclick="toggle('ck2425')">📁 CÔNG KHAI 24–25</a></p>
 <div class="sub-item" id="ck2425">
-  <p><a href="public-docs/24-25/" target="_blank">📄 Mở thư mục</a></p>
+  <p><a href="cong-khai-24-25/vb01.pdf" target="_blank">📄 Văn bản 01</a></p>
+  <p><a href="cong-khai-24-25/vb02.pdf" target="_blank">📄 Văn bản 02</a></p>
+  <p><a href="cong-khai-24-25/vb03.pdf" target="_blank">📄 Văn bản 03</a></p>
+  <p><a href="cong-khai-24-25/vb04.pdf" target="_blank">📄 Văn bản 04</a></p>
+  <p><a href="cong-khai-24-25/vb05.pdf" target="_blank">📄 Văn bản 05</a></p>
+  <p><a href="cong-khai-24-25/vb06.pdf" target="_blank">📄 Văn bản 06</a></p>
+  <p><a href="cong-khai-24-25/vb07.pdf" target="_blank">📄 Văn bản 07</a></p>
+  <p><a href="cong-khai-24-25/vb08.pdf" target="_blank">📄 Văn bản 08</a></p>
+  <p><a href="cong-khai-24-25/vb09.pdf" target="_blank">📄 Văn bản 09</a></p>
+  <p><a href="cong-khai-24-25/vb10.pdf" target="_blank">📄 Văn bản 10</a></p>
 </div>
 
-<p><a onclick="toggleSub('ck2526')">📁 CÔNG KHAI 25-26</a></p>
+<p><a onclick="toggle('ck2526')">📁 CÔNG KHAI 25–26</a></p>
 <div class="sub-item" id="ck2526">
-  <p><a href="public-docs/25-26/" target="_blank">📄 Mở thư mục</a></p>
+  <p><a href="cong-khai-25-26/vb01.pdf" target="_blank">📄 Văn bản 01</a></p>
+  <p><a href="cong-khai-25-26/vb02.pdf" target="_blank">📄 Văn bản 02</a></p>
+  <p><a href="cong-khai-25-26/vb03.pdf" target="_blank">📄 Văn bản 03</a></p>
+  <p><a href="cong-khai-25-26/vb04.pdf" target="_blank">📄 Văn bản 04</a></p>
+  <p><a href="cong-khai-25-26/vb05.pdf" target="_blank">📄 Văn bản 05</a></p>
+  <p><a href="cong-khai-25-26/vb06.pdf" target="_blank">📄 Văn bản 06</a></p>
+  <p><a href="cong-khai-25-26/vb07.pdf" target="_blank">📄 Văn bản 07</a></p>
+  <p><a href="cong-khai-25-26/vb08.pdf" target="_blank">📄 Văn bản 08</a></p>
+  <p><a href="cong-khai-25-26/vb09.pdf" target="_blank">📄 Văn bản 09</a></p>
+  <p><a href="cong-khai-25-26/vb10.pdf" target="_blank">📄 Văn bản 10</a></p>
 </div>
 
-<p><a onclick="toggleSub('cktai')">📁 CÔNG KHAI TÀI CHÍNH</a></p>
-<div class="sub-item" id="cktai">
-  <p><a href="public-docs/tai-chinh/" target="_blank">📄 Mở thư mục</a></p>
+<p><a onclick="toggle('cktc')">📁 CÔNG KHAI TÀI CHÍNH</a></p>
+<div class="sub-item" id="cktc">
+  <p><a href="cong-khai-tai-chinh/vb01.pdf" target="_blank">📄 Văn bản 01</a></p>
+  <p><a href="cong-khai-tai-chinh/vb02.pdf" target="_blank">📄 Văn bản 02</a></p>
+  <p><a href="cong-khai-tai-chinh/vb03.pdf" target="_blank">📄 Văn bản 03</a></p>
+  <p><a href="cong-khai-tai-chinh/vb04.pdf" target="_blank">📄 Văn bản 04</a></p>
+  <p><a href="cong-khai-tai-chinh/vb05.pdf" target="_blank">📄 Văn bản 05</a></p>
+  <p><a href="cong-khai-tai-chinh/vb06.pdf" target="_blank">📄 Văn bản 06</a></p>
+  <p><a href="cong-khai-tai-chinh/vb07.pdf" target="_blank">📄 Văn bản 07</a></p>
+  <p><a href="cong-khai-tai-chinh/vb08.pdf" target="_blank">📄 Văn bản 08</a></p>
+  <p><a href="cong-khai-tai-chinh/vb09.pdf" target="_blank">📄 Văn bản 09</a></p>
+  <p><a href="cong-khai-tai-chinh/vb10.pdf" target="_blank">📄 Văn bản 10</a></p>
 </div>
 
-<p><a onclick="toggleSub('vanban')">📁 VĂN BẢN</a></p>
-<div class="sub-item" id="vanban">
-  <p><a href="public-docs/van-ban/" target="_blank">📄 Mở thư mục</a></p>
+<p><a onclick="toggle('vb')">📁 VĂN BẢN</a></p>
+<div class="sub-item" id="vb">
+  <p><a href="van-ban/vb01.pdf" target="_blank">📄 Văn bản 01</a></p>
+  <p><a href="van-ban/vb02.pdf" target="_blank">📄 Văn bản 02</a></p>
+  <p><a href="van-ban/vb03.pdf" target="_blank">📄 Văn bản 03</a></p>
+  <p><a href="van-ban/vb04.pdf" target="_blank">📄 Văn bản 04</a></p>
+  <p><a href="van-ban/vb05.pdf" target="_blank">📄 Văn bản 05</a></p>
+  <p><a href="van-ban/vb06.pdf" target="_blank">📄 Văn bản 06</a></p>
+  <p><a href="van-ban/vb07.pdf" target="_blank">📄 Văn bản 07</a></p>
+  <p><a href="van-ban/vb08.pdf" target="_blank">📄 Văn bản 08</a></p>
+  <p><a href="van-ban/vb09.pdf" target="_blank">📄 Văn bản 09</a></p>
+  <p><a href="van-ban/vb10.pdf" target="_blank">📄 Văn bản 10</a></p>
 </div>
 </div>
 </section>
 
-<!-- TIN NỔI BẬT -->
+<!-- TIN TỨC -->
 <section id="tin-tuc" class="container">
 <div class="card">
 <h2>Tin nổi bật</h2>
-<div id="news"></div>
+
+<div class="news-item">
+<h3>Chào đón học sinh lớp 1 năm học 2025–2026</h3>
+<small>05/09/2025</small>
+<p>Nhà trường hân hoan tổ chức lễ đón học sinh lớp 1.</p>
 </div>
 
-<div class="card sidebar">
-<h2>Cơ cấu tổ chức</h2>
-<p>• Ban giám hiệu: 03</p>
-<p>• Tổ chuyên môn: 05</p>
-<p>• Văn phòng: 01</p>
+<div class="news-item">
+<h3>Lễ Khai giảng năm học mới 2025–2026</h3>
+<small>05/09/2025</small>
+<p>Lễ khai giảng được tổ chức long trọng.</p>
 </div>
-</section>
 
-<!-- TUYỂN SINH -->
-<section id="tuyen-sinh" class="container">
-<div class="card sidebar">
+<div class="news-item">
+<h3>Lễ kỷ niệm ngày Nhà giáo Việt Nam 20/11</h3>
+<small>20/11/2025</small>
+<p>Hoạt động ý nghĩa tri ân thầy cô giáo.</p>
+</div>
+</div>
+
+<div id="tuyen-sinh" class="card sidebar">
 <h2>Tuyển sinh</h2>
-<p><a onclick="toggleSub('kh-ts')">Kế hoạch tuyển sinh</a></p>
-<div class="sub-item" id="kh-ts">
-<pre>
-KẾ HOẠCH TỰU TRƯỜNG – KHAI GIẢNG
-Năm học 2025 – 2026
-
-- Đón HS lớp 1: 7h30 ngày 29/8/2025
-- HS lớp 2-5: 8h00 ngày 29/8/2025
-- Khai giảng: 7h30 ngày 05/9/2025
-- Học chính thức: 08/9/2025
-</pre>
+<p><a onclick="toggle('kehoach')">Kế hoạch tuyển sinh</a></p>
+<div class="sub-item" id="kehoach">
+<p>Tựu trường: 29/8/2025</p>
+<p>Khai giảng: 05/9/2025</p>
 </div>
 </div>
 </section>
 
 <footer>
-© 2026 Trường Tiểu học Điện Biên Đông – Cổng thông tin điện tử
+© 2026 Trường Tiểu học Điện Biên Đông
 </footer>
 
 <script>
 /* Banner */
-const banners=["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"];
-let i=0,img=document.getElementById("bannerImg"),dots=document.getElementById("dots");
-banners.forEach((_,n)=>{let d=document.createElement("span");d.className=n? "dot":"dot active";d.onclick=()=>show(n);dots.appendChild(d);});
-function show(n){i=n;img.src=banners[i];document.querySelectorAll(".dot").forEach((d,x)=>d.classList.toggle("active",x===i))}
-setInterval(()=>show((i+1)%banners.length),4000);
+const banners=["banner1.jpg","banner2.jpg","banner3.jpg","banner4.jpg","banner5.jpg","banner6.jpg","banner7.jpg","banner8.jpg"]
+let i=0,img=document.getElementById("bannerImg"),dots=document.getElementById("dots")
+banners.forEach((_,x)=>{let d=document.createElement("span");d.className=x? "dot":"dot active";d.onclick=()=>show(x);dots.appendChild(d)})
+function show(x){i=x;img.src=banners[i];document.querySelectorAll(".dot").forEach((d,j)=>d.classList.toggle("active",j===i))}
+setInterval(()=>{i=(i+1)%banners.length;show(i)},4000)
 
 /* Toggle */
-function toggleSub(id){
-let e=document.getElementById(id);
-e.style.display=e.style.display==="block"?"none":"block";
+function toggle(id){
+let e=document.getElementById(id)
+e.style.display=e.style.display==="block"?"none":"block"
 }
 
-/* News */
-const news=[
-{t:"Chào đón HS lớp 1",d:"05/09/2025",c:"Hân hoan đón học sinh lớp 1."},
-{t:"Khai giảng 2025-2026",d:"05/09/2025",c:"Lễ khai giảng năm học mới."},
-{t:"Triển khai nhiệm vụ",d:"12/09/2025",c:"Họp hội đồng sư phạm."},
-{t:"Hoạt động trải nghiệm",d:"20/09/2025",c:"Phát triển phẩm chất học sinh."},
-{t:"Mít tinh 20/11",d:"20/11/2025",c:"Kỷ niệm ngày Nhà giáo Việt Nam."}
-];
-const box=document.getElementById("news");
-news.forEach(n=>{
-let div=document.createElement("div");div.className="news-item";
-div.innerHTML=`<h3>${n.t}</h3><small>${n.d}</small><p>${n.c}</p>`;
-div.querySelector("h3").onclick=()=>{let p=div.querySelector("p");p.style.display=p.style.display==="block"?"none":"block";}
-box.appendChild(div);
-});
+/* Tin */
+document.querySelectorAll(".news-item h3").forEach(h=>{
+h.onclick=()=>{let p=h.nextElementSibling.nextElementSibling;p.style.display=p.style.display==="block"?"none":"block"}
+})
 </script>
 
 </body>
